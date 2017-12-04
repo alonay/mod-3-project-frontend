@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
-     function getBooks(){
-           fetch('')
+     function getShows(){
+           fetch('http://localhost:3000/shows')
              .then(res => res.json())
-             .then(contestants => getContestants(contestants))
+             .then(contestants => console.log(contestants))
            }
 
 let prediction = document.getElementById("prediction_input")
@@ -13,8 +13,5 @@ prediction.addEventListener("click", (event) => {
   event.preventDefault()
   let input = document.getElementById("prediction_input")
   predictions.innerHTML += `<li>${input.value} at ${time.now}</li>`
-}
-
-
-
-getContestants()
+})
+})
