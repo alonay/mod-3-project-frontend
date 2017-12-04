@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <h1> Reality Tracker </h1>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>JavaScript Code Challenge</title>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <style>
-    input {
-      font-size: 2rem;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
-
 <body>
-  <div class="container">
-    <div class="row" id="image_content">
-       <div id="image_card" class="card col-md-4">
-          <img id="image" data-id >
-          <h4 id="name"></h4>
+
+	<div style="text-align: center;">
+		<h1>Welcome to Book Lister!</h1>
+		<button id="see-users">See Users</button>
+		<button id="see-books">See Books</button>
+	</div>
+
+	<div id="list-container">
+		<ol id="list"></ol>
+	</div>
+
+	<div id="details">
+
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
           <!-- <span>Likes: -->
             <!-- <span id="likes">0</span> -->
           </span>
           <!-- <button id="like_button">Like</button> -->
           <h3>Who will be eliminated today?</h3>
-          <form id="prediction_form">
+
             <input id="prediction_input" type="text" name="comment" placeholder="type prediction here"/>
-            <input type="submit" value="Bye Falicia"/>
-          </form>
+            <button id="button_submit">"Bye Falicia"</button>
+
           <ul id="prediction_history">
 
           </ul>
@@ -36,7 +40,7 @@
       <div class="card col-md-4"></div>
     </div>
   </div>
-  <script type="text/javascript" src='index.js'></script>
   <script type="text/javascript" src='contestant.js'></script>
+  <script type="text/javascript" src='index.js'></script>
   </body>
 </html>
