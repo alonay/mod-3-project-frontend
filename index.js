@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
-    //  function getContestants(){
-    //        fetch('')
-    //          .then(res => res.json())
-    //          .then(contestants => getContestants(contestants))
-    //        }
+     function getShows(){
+           fetch('http://localhost:3000/shows')
+             .then(res => res.json())
+             .then(contestants => console.log(contestants))
+           }
 
 let prediction = document.getElementById("prediction_input")
 let predictions = document.getElementById("prediction_history")
