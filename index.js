@@ -1,22 +1,43 @@
-// document.addEventListener("DOMContentLoaded", function(){
-//      function getShows(){
-//            fetch('http://localhost:3000/shows')
-//              .then(res => res.json())
-//              .then(contestants => console.log(contestants))
-//            }
-//
-// let prediction = document.getElementById("prediction_input")
-// let predictions = document.getElementById("prediction_history")
-// let form_submission = document.getElementById("prediction_form")
-// //let button_submit = document.getElementById("button_submit")
-//
-// document.getElementById("button_submit").addEventListener("click", ()=> {
-//
-//
-//   let input = document.getElementById("prediction_input")
-//   predictions.innerHTML += `<li>${input.value}</li>`
-// })
-// })
 
 
-// getContestants()
+function getCastMembersAndPredictions() {
+  fetch('http://localhost:3000/shows')
+  .then(response => response.json())
+  .then(json => {
+    let predictionList = document.getElementById("prediction_history")
+    const castMembers = json.cast_members
+    const predictions = json.predictions
+
+    let selectInput = document.getElementById("prediction_input")
+    castMembers.forEach(castMember => {
+      selectInput.innerHTML += `<option value="${castMember.id}">${castMember.name}</option>`
+
+    })
+  })
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  getCastMembersAndPredictions()
+  let predictions = document.getElementById("prediction_history")
+  let selectInputPerdiction = document.getElementById("prediction_input")
+
+  document.getElementById("button_submit").addEventListener("click", () => {
+    let object = {
+  		method: "POST",
+  		headers: {
+  			'Content-Type': "application/json",
+  			'Accept': "application/json"
+  		},
+  		body: JSON.stringify({
+        cast_member_id: selectInputPerdiction.value,
+      })
+  	}
+
+  	fetch("http://localhost:3000/predictions", object)
+  	.then(response => response.json())
+  	.then(json => {
+      const name = json.cast_member.name
+      predictions.innerHTML += `<li>${name} at ${new Date()}</li>`
+    })
+  })
+})

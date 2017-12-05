@@ -8,18 +8,28 @@
 <body>
 	<div style="text-align: center;">
 		<h1>Welcome to Book Lister!</h1>
-		<button id="see-users">See Users</button>
-		<button id="see-books">See Books</button>
+		<!-- <button id="see-users">See Users</button>
+		<button id="see-books">See Books</button> -->
 	</div>
 
 	<div id="list-container">
 		<ol id="list"></ol>
 	</div>
 
-	<div id="details">
+  <!--
+    Select Menu Option tags should have the
+    cast_member_id for a value so we can send that
+    to the server in our post request
+  -->
+	<div id="details"></div>
+  <h3>Who will be eliminated today?</h3>
+  <select id="prediction_input"></select>
+  <button id="button_submit">"Bye Felicia"</button>
+  <ul id="prediction_history"></ul>
 
 	</div>
 	<script type="text/javascript" src="index.js"></script>
 	<script type="text/javascript" src="contestant.js"></script>
 </body>
 </html>
+
