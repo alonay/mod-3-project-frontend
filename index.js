@@ -1,5 +1,4 @@
 
-
 function getCastMembersAndPredictions() {
   fetch('http://localhost:3000/shows')
   .then(response => response.json())
@@ -7,6 +6,11 @@ function getCastMembersAndPredictions() {
     let predictionList = document.getElementById("prediction_history")
     const castMembers = json.cast_members
     const predictions = json.predictions
+
+    predictions.forEach(prediction => {
+      const name = castMembers[prediction.cast_member_id - 1].name
+      predictionList.innerHTML += `<li>${name} ${new Date()}</li>`
+    })
 
     let selectInput = document.getElementById("prediction_input")
     castMembers.forEach(castMember => {
