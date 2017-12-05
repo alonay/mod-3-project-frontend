@@ -9,38 +9,27 @@
 <body>
 	<div style="text-align: center;">
 		<h1>Welcome to Book Lister!</h1>
-		<button id="see-users">See Users</button>
-		<button id="see-books">See Books</button>
+		<!-- <button id="see-users">See Users</button>
+		<button id="see-books">See Books</button> -->
 	</div>
 
 	<div id="list-container">
 		<ol id="list"></ol>
 	</div>
 
-	<div id="details">
+  <!--
+    Select Menu Option tags should have the
+    cast_member_id for a value so we can send that
+    to the server in our post request
+  -->
+	<div id="details"></div>
+  <h3>Who will be eliminated today?</h3>
+  <select id="prediction_input"></select>
+  <button id="button_submit">"Bye Felicia"</button>
+  <ul id="prediction_history"></ul>
 
-	</div>
-	<script type="text/javascript" src="index.js"></script>
-</body>
-</html>
-          <!-- <span>Likes: -->
-            <!-- <span id="likes">0</span> -->
-          </span>
-          <!-- <button id="like_button">Like</button> -->
-          <h3>Who will be eliminated today?</h3>
-
-            <input id="prediction_input" type="text" name="comment" placeholder="type prediction here"/>
-            <button id="button_submit">"Bye Falicia"</button>
-
-          <ul id="prediction_history">
-
-          </ul>
-      </div>
-      <div class="card col-md-4"></div>
-    </div>
-  </div>
   <script type="text/javascript" src='src/Image.js'></script>
   <script type="text/javascript" src='src/Comment.js'></script>
-  <script type="text/javascript" src='index.js'></script>
-  </body>
+	<script type="text/javascript" src="index.js"></script>
+</body>
 </html>
