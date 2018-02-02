@@ -1,11 +1,73 @@
-#list-container{
-	display: inline-block;
-	float: left;
-	width: 500px;
+
+* {
+	text-align: center;
+	list-style-type: none;
+	font-family: arial;
+}
+
+body {
+
+}
+
+img.images {
+  height: 300px;
+}
+
+#list-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
 }
 
 #details{
+	text-align: center;
 	display: inline-block;
-	float: right;
-	width: 500px;
+
+}
+
+.image-container {
+	position: relative;
+}
+
+.image-container:hover .images {
+  opacity: 0.3;
+}
+
+.image-container:hover .middle {
+  opacity: 1;
+}
+
+.eliminated-image {
+	top: 30%;
+	left: 0;
+	position: absolute;
+}
+
+
+
+.middle {
+	opacity: 0;
+	width: 100%;
+	position: absolute;
+}
+
+.images {
+    opacity: 0.50;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+		z-index: 2;
+}
+
+.images:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+
+img.eliminated:hover {
+	/*height: 1000px;*/
+	opacity: 0;
+	visibility: visible;
+	/*background-image: url('https://media.giphy.com/media/3oz8xtprbtd0wEWOoU/giphy.gif');*/
+	/*background-size: 100px 100px;*/
+
 }

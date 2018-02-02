@@ -1,26 +1,29 @@
+document.addEventListener("DOMContentLoaded", function(){
 
 function getCastMembersAndPredictions() {
   fetch('http://localhost:3000/shows')
   .then(response => response.json())
-  .then(json => {
-    let predictionList = document.getElementById("prediction_history")
-    const castMembers = json.cast_members
-    const predictions = json.predictions
+  .then(json => displayPredictions(json))
+}
 
-    predictions.forEach(prediction => {
-      const name = castMembers[prediction.cast_member_id - 1].name
-      predictionList.innerHTML += `<li>${name} ${new Date()}</li>`
-    })
+function displayPredictions(json) {
+  let predictionList = document.getElementById("prediction_history")
+  const castMembers = json.cast_members
+  const predictions = json.predictions
 
-    let selectInput = document.getElementById("prediction_input")
-    castMembers.forEach(castMember => {
-      selectInput.innerHTML += `<option value="${castMember.id}">${castMember.name}</option>`
+  predictions.forEach(prediction => {
+    const name = castMembers[prediction.cast_member_id - 1].name
+    predictionList.innerHTML += `<li>${name} ${new Date()}</li>`
+  })
 
-    })
+  let selectInput = document.getElementById("prediction_input")
+  castMembers.forEach(castMember => {
+    selectInput.innerHTML += `
+    <option value="${castMember.id}">${castMember.name}</option>
+    `
   })
 }
 
-document.addEventListener("DOMContentLoaded", function(){
   getCastMembersAndPredictions()
   let predictions = document.getElementById("prediction_history")
   let selectInputPerdiction = document.getElementById("prediction_input")
@@ -44,4 +47,6 @@ document.addEventListener("DOMContentLoaded", function(){
       predictions.innerHTML += `<li>${name} at ${new Date()}</li>`
     })
   })
+
+getCastMembersAndPredictions()
 })
