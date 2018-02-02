@@ -11,9 +11,11 @@ Open the DragRacer back end repo, hosted by Heroku, before running. The backend 
 ### Installing
 Run the following commands in your terminal:
 
-```npm install
 ```
-```npm start
+npm install
+```
+```
+npm start
 ```
 
 
