@@ -9,7 +9,7 @@ This application was made using Javascript and styled with CSS on the front end.
 
 ## Getting Started
 ### Connecting to the API
-Open the DragRacer back end repo, hosted by Heroku and found [here](https://dragracer.herokuapp.com/), before running. The backend will run on localhost/3000./
+Open the DragRacer back end repo, hosted by Heroku and found [here](https://dragracer.herokuapp.com/), before running. The backend will run on ```localhost/3000/```.
 
 ### Installing
 Run the following commands in your terminal:
